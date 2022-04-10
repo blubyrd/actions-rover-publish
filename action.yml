@@ -1,0 +1,33 @@
+name: 'Apollo Rover Publish Action'
+description: 'publish a schema to Apollo Studio'
+inputs:
+  graph:
+    description: '@graph_id portion of the graph ref'
+    required: true
+  variant:
+    description: '@variant_name portion of the graph ref'
+    required: false
+    default: 'current'
+  federated:
+    description: 'true when interacting directly with a federated subgraph'
+    required: false
+    default: false
+  subgraph:
+    description: 'subgraph name'
+    required: false
+  path:
+    description: 'the schema path'
+    required: false
+  artifact:
+    description: 'the schema artifact name'
+    required: false
+  routing_url: 
+    description: 'the subgraph routing url'
+    required: false
+  convert: 
+    description: 'convert non-federated graph'
+    default: false
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
